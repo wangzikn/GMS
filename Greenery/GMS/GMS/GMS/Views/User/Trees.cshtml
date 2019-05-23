@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewData["Title"] = "Trees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["SubTitle"] = "QUẢN LÝ CÂY XANH";
+    ViewData["TopBreakCrumb"] = "Cây xanh";
+    ViewData["ContentBreakCrumb"] = "Quản lý cây xanh";
+}
+
+<link href="~/dist/css/ancustom.css" rel="stylesheet">
+<!-- Info box -->
+<!-- ============================================================== -->
+<div class="tableInfo">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="btn-group">
+                        <button type="button" name="XoaMucDaChon" data-toggle="modal" data-target="#verticalcenter" class="btn btn-secondary" aria-haspopup="true" aria-expanded="false" >
+                            <i class="ti-trash"></i>
+                            Xóa Mục Đã Chọn
+                        </button>
+                    </div>
+                    <div class="search-container">
+                        <label>Tìm Kiếm :<input type="search" class="form-control search" placeholder="" aria-controls="example23"></label>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table table-striped table tableQuanLiNguoiDung">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%; position: relative;" name="trangthaicaycay">
+                                        <input type="checkbox" id="checkAll" name="trangthaicaycay">
+                                    </th>
+                                    <th style="width: 5%; position: relative;" name="sttcay">STT</th>
+                                    <th style="width: 25%; position: relative;" name="tencay">Tên Cây Xanh</th>
+                                    <th style="width: 25%; position: relative;" name="tenkhoahoc">
+                                        Tên Khoa Học
+                                    </th>
+                                    <th style=" text-align:center;width: 40%; position: relative;" name="hinhanhcay">Hình ảnh</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="dataTables_paginate" id="myTable_paginate">
+                        <ul id="paging" class="pagination-sm"></ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin Modal -->
+    <!-- sample modal content -->
+    <div id="verticalcenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="vcenter">Thông Báo!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <h4>Bạn có chắc chắn muốn xóa không?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal" id="btn-del">Xóa</button>
+                    <button type="button" class="btn btn-info waves-effect " data-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>                          <!-- /.modal -->
+</div>
+<!-- ============================================================== -->
+<!-- End Info box -->
+<script src="~/dist/js/tree.js"></script>
+<script src="~/dist/js/listTrees.js"></script>

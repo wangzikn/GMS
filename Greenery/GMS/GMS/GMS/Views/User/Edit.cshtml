@@ -1,0 +1,238 @@
+﻿@{
+    ViewData["Title"] = "AddUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["SubTitle"] = "SỬA NGƯỜI DÙNG";
+    ViewData["TopBreakCrumb"] = "Người dùng";
+    ViewData["ContentBreakCrumb"] = "Thêm Người dùng";
+}
+@*Css Custom*@
+<link href="~/dist/css/phungcustom.css" rel="stylesheet">
+<script src="~/dist/js/jquery.validate.js"></script>
+<script src="~/dist/js/edit.js"></script>
+<script src="~/dist/js/notify.js"></script>
+@*<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+<form action="#" name="editing" id="editing">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                @*<div class="card-header ">
+                        <h4 class="text-themecolor"><b>Thông tin tài khoản</b></h4>
+                    </div>*@
+                <div class="card-body">
+
+                    <div class="form-body">
+                        <!--row-->
+                        <label class="thongtin">THÔNG TIN ĐĂNG NHẬP</label>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">Tên Đăng Nhập <span class="red">*</span></label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <i class="ti-user"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" name="userName" aria-label="Username" placeholder="anguyenvan" aria-describedby="basic-addon1" id="userName" disabled>
+                                    </div>
+                                    <div class="error-placement"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin" for="pwd1">Mật Khẩu <span class="red">*</span></label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon3">
+                                                <i class="ti-lock"></i>
+                                            </span>
+                                        </div>
+                                        <input type="password" class="form-control" aria-label="Password"
+                                               aria-describedby="basic-addon3" name="password" id="password">
+                                    </div>
+                                    <div class="error-placement"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--/row-->
+                        <!--row-->
+                        <label class="thongtin">THÔNG TIN CÁ NHÂN</label>
+                        <div class="row ">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">Họ và Tên <span class="red">*</span></label>
+                                    <input type="text" placeholder="Nguyễn Văn A" class="form-control form-control-danger" name="fullName" id="fullName">
+                                    <div class="error-placement"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">Ngày Sinh <span class="red">*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calender"></i></span>
+                                        </div>
+                                        <input type="text" id="birthday" name="birthday" class="form-control "
+                                               placeholder="dd/mm/yyyy">
+                                    </div>
+                                    <div class="error-placement"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">Số Điện Thoại <span class="red">*</span></label>
+                                    <input type="text" name="phoneNumber" placeholder="0909445566" id="phoneNumber" class="form-control form-control-danger">
+                                    <div class="error-placement"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--/row-->
+                        <!--row-->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">CMND <span class="red">*</span></label>
+                                    <input type="text" name="identity" placeholder="281100288" id="identity" class="form-control form-control-danger">
+                                    <div class="error-placement"></div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">Ngày Cấp <span class="red">*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calender"></i></span>
+                                        </div>
+                                        <input type="text" name="dateOfIssue" id="dateOfIssue" class="form-control"
+                                               placeholder="dd/mm/yyyy">
+                                    </div>
+                                    <div class="error-placement"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">Nơi Cấp <span class="red">*</span></label>
+                                    <div class="controls">
+                                        <select name="placeOfIssue" id="placeOfIssue" class="form-control">
+                                            <option value="">Chọn tỉnh thành</option>
+                                            <option value="Bình Dương">Bình Dương</option>
+                                            <option value="Bình Phước">Bình Phước</option>
+                                            <option value="Bến Tre">Bến Tre</option>
+                                        </select>
+                                    </div>
+                                    <div class="error-placement"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/row-->
+                        <!--row-->
+                        <label class="tenthongtin">Địa chỉ <span class="red">*</span></label>
+                        <div class="row">
+                            @*<div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="tenthongtin">Tỉnh/Thành phố </label>
+                                        <div class="controls">
+                                            <select name="province" id="province" class="form-control" required
+                                                    oninvalid="this.setCustomValidity('Vui lòng chọn khu vực.')" oninput="setCustomValidity('')">
+                                                <option value="0" selected="selected">Chọn khu vực</option>
+                                            </select>
+                                        </div>
+                                        <div class="error-placement"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="tenthongtin">Quận/Huyện</label>
+                                        <div class="controls">
+                                            <select name="district" id="district" class="form-control" required
+                                                    oninvalid="this.setCustomValidity('Vui lòng chọn khu vực.')" oninput="setCustomValidity('')">
+                                                <option value="0" selected="selected">Chọn khu vực</option>
+                                            </select>
+                                        </div>
+                                        <div class="error-placement"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="tenthongtin">Phường/Xã</label>
+                                        <div class="controls">
+                                            <select name="ward" id="ward" required class="form-control"
+                                                    oninvalid="this.setCustomValidity('Vui lòng chọn khu vực.')" oninput="setCustomValidity('')">
+                                                <option value="0" selected="selected">Chọn khu vực</option>
+                                            </select>
+                                        </div>
+                                        <div class="error-placement"></div>
+                                    </div>
+                                </div>*@
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    @*<label class="tenthongtin">Số Nhà</label>*@
+                                    <input type="text" name="address" id="address" class="form-control form-control-danger"
+                                           placeholder="Ví dụ: 2 Độc Lập">
+                                    <div class="error-placement"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--/row-->
+                        <label class="thongtin">THÔNG TIN TỔ CHỨC</label>
+                        <!--row-->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">Vai Trò</label>
+                                    <input type="text" name="rolePersonal" class="form-control form-control-danger"
+                                           placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">Tổ Chức</label>
+                                    <input type="text" name="organization" class="form-control form-control-danger"
+                                           placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">Địa Chỉ Tổ Chức</label>
+                                    <input type="text" name="orgAdrress" class="form-control form-control-danger"
+                                           placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="tenthongtin">Email</label>
+                                    <input type="text" name="email" id="email" class="form-control form-control-danger"
+                                           placeholder="abc@gmail.com">
+                                    <div class="error-placement"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-success adduser" id="save">
+                            <i class="fa fa-check"></i>
+                            Lưu
+                        </button>
+                        <button type="reset" class="btn btn-warning adduser">
+                            <i class="mdi mdi-close-octagon"></i>
+                            Hủy
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

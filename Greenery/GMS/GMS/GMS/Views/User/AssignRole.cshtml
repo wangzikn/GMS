@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["Title"] = "AssignRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["SubTitle"] = "QUẢN LÝ PHÂN QUYỀN";
+    ViewData["TopBreakCrumb"] = "Phân quyền";
+    ViewData["ContentBreakCrumb"] = "Quản lý phân quyền";
+}
+
+<link href="~/dist/css/ancustom.css" rel="stylesheet">
+<script src="~/dist/js/AssignRole.js"></script>
+<script src="~/dist/js/notify.js"></script>
+<div name="quanli-phanquyen" id="quanli-phanquyen">
+    <form>
+        <div class="group-chonquyen">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-body">
+                        <h3 class="card-title tieude">CHỌN QUYỀN</h3>
+                        <div class="row" id="chonquyen">
+                            <div class=" col-md-4 col-xs-6 col-sm-4" id="1">
+                                <h4 class="card-title thongtin">Quản lý người dùng</h4>
+                                <hr>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="quyentao" value="1" name="qlnguoidung">
+                                    <label class="custom-control-label" for="quyentao">Quyền Tạo</label>
+                                </div>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="quyenxoa" value="2" name="qlnguoidung">
+                                    <label class="custom-control-label" for="quyenxoa">Quyền Xóa</label>
+                                </div>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="quyenxem" value="4" name="qlnguoidung">
+                                    <label class="custom-control-label" for="quyenxem">Quyền Xem</label>
+                                </div>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="quyensua" value="8" name="qlnguoidung">
+                                    <label class="custom-control-label" for="quyensua">Quyền Sửa</label>
+                                </div>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="chontatcaquyen" name="qlnguoidungall">
+                                    <label class="custom-control-label" for="chontatcaquyen">Chọn Tất Cả</label>
+                                </div>
+                            </div>
+                            <div class=" col-md-4 col-xs-6 col-sm-4" id="2">
+                                <h4 class="card-title thongtin">Phân quyền</h4>
+                                <hr>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="dqphanquyen" value="1" name="dqphanquyen">
+                                    <label class="custom-control-label" for="dqphanquyen">Được quyền phân quyền</label>
+                                </div>
+                            </div>
+                            <div class=" col-md-4 col-xs-6 col-sm-4" id="3">
+                                <h4 class="card-title thongtin">Cây xanh</h4>
+                                <hr>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="themcaymoi" value="1" name="qlcayxanh">
+                                    <label class="custom-control-label" for="themcaymoi">Thêm Cây Mới</label>
+                                </div>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="xoacay" value="2" name="qlcayxanh">
+                                    <label class="custom-control-label" for="xoacay">Xóa Cây</label>
+                                </div>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="xemdscay" value="4" name="qlcayxanh">
+                                    <label class="custom-control-label" for="xemdscay">Xem Danh Sách Cây</label>
+                                </div>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="suathongtincay" value="8" name="qlcayxanh">
+                                    <label class="custom-control-label" for="suathongtincay">Sửa Thông Tin Cây</label>
+                                </div>
+                                <div class="custom-control custom-checkbox row">
+                                    <input type="checkbox" class="custom-control-input" id="chontatcaquyencayxanh" name="qlcayxanhall">
+                                    <label class="custom-control-label" for="chontatcaquyencayxanh">Chọn Tất Cả</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="group-chonuser">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title tieude">CHỌN NGƯỜI DÙNG</h3>
+                            <div class="btn-group">
+                            </div>
+                            <div class="search-container">
+                                <label>Tìm Kiếm :<input type="search" id="searchFilter" class="form-control search" placeholder="" aria-controls="example23"></label>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table table-striped table tableQuanLiNguoiDung" id="usertable">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 5%; position: relative;" name="TrangThai" "=" ">
+                                                <input type="checkbox" id="checkAll" name="TrangThai">
+                                            </th>
+                                            <th style="width: 5%; position: relative;" name="SoThuTu" "=" ">STT</th>
+                                            <th style="width: 20%; position: relative;" name="TenNguoiDung">Tên Người Dùng</th>
+                                            <th style="width: 20%; position: relative;" name="HoVaTen">
+                                                Họ Và Tên
+                                                <i class="fas fa-sort"></i>
+                                            </th>
+                                            <th style="width: 20%; position: relative;" name="SoDienThoai">Số Điện Thoại</th>
+                                            <th style="width: 35%; position: relative;" name="DiaChi">Địa Chỉ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="usertablebody"></tbody>
+                                </table>
+                            </div>
+                            <div class="dataTables_paginate" id="myTable_paginate">
+                                <ul id="paging" class="pagination-sm"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-group" style="">
+            <button type="button" class="btn btn-success" id="save"><i class="fa fa-check"></i> Lưu</button>
+            <button type="reset" class="btn btn-warning"><i class="mdi mdi-close-octagon"></i> Hủy</button>
+          
+        </div>
+    </form>
+</div>
+

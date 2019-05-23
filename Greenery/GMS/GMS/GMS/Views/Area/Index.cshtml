@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "AddUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["SubTitle"] = "Quản Lý Đơn Vị Hành Chính";
+    //ViewData["TopBreakCrumb"] = "Quản Lý Đơn Vị Hành Chính";
+    //ViewData["ContentBreakCrumb"] = "Thêm Người dùng";
+}
+<link rel="stylesheet" href="~/lib/jstree/themes/default/style.min.css" />
+<script src="~/lib/jstree/jstree.js"></script>
+<link href="~/dist/css/phungcustom.css" rel="stylesheet">
+<script src="/dist/js/area-tree.js"></script>
+<style>
+    #department {
+        background: #ffffff;
+        margin: 8px 8px 8px 8px;
+        padding: 40px 20px;
+    }
+
+    #searchInput{
+        border-radius: 8px;
+    }
+    
+    #note{
+        margin-bottom: 20px;
+    }
+    
+}
+</style>
+<div id="department">
+    
+          <p id="note"><label style="font-weight: bold">Hướng dẫn:</label> Nhấp chuột phải để thực hiện các thao tác.</p>
+          <form id="search-form">
+              <input type="search" id="searchInput" />
+              <button class="btn" type="submit" id="submit">Tìm kiếm</button>
+              <button class="btn btn-info btnArea" type="submit" id="save">Lưu</button>
+          </form>
+         
+    <div class="row">
+        <div id="jstree-div"></div>
+    </div>
+</div>

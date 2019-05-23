@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["SubTitle"] = "DANH SÁCH NGƯỜI DÙNG";
+    ViewData["TopBreakCrumb"] = "Người dùng";
+    ViewData["ContentBreakCrumb"] = "Quản lý người dùng";
+}
+<!-- Custom Css -->
+<script src="~/dist/js/users.js"></script>
+<script src="~/dist/js/delete.js"></script>
+<link href="~/dist/css/ancustom.css" rel="stylesheet">
+<div class="tableInfo">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="btn-group">
+                        <button type="button" name="delete" data-toggle="modal" data-target="#verticalcenter" class="btn btn-secondary" aria-haspopup="true" aria-expanded="false" id="delete">
+                            <i class="ti-trash"></i>
+                            Xóa Mục Đã chọn
+                        </button>
+                    </div>
+                    <div class="search-container">
+                        <label class="tenthongtin">Tìm kiếm:<input type="search" class="form-control search" placeholder="" aria-controls="example23" name="search" id="searchFilter"></label>
+                        @*<button class="btn btn-secondary" type="submit"><i class="fa fa-search "></i></button>*@
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table table-striped table tableQuanLiNguoiDung">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%; position: relative;">
+                                        <input type="checkbox" id="selectAll" class="select" name="select">
+                                    </th>
+                                    <th style="width: 5%; position: relative;">STT</th>
+                                    <th style="width: 15%; position: relative;">Tên Người dùng</th>
+                                    <th style="width: 15%; position: relative;">
+                                        Họ và Tên
+                                        <i class="fas fa-sort"></i>
+                                    </th>
+                                    <th style="width: 15%; position: relative;">Số Điện thoại</th>
+                                    <th style="width: 45%; position: relative;">Địa chỉ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               <!-- JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="dataTables_paginate" id="myTable_paginate">
+                        <ul id="paging" class="pagination-sm">
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin Modal -->
+    <!-- sample modal content -->
+    <div id="verticalcenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="vcenter">Thông Báo!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <h4>Bạn có chắc chắn muốn xóa không?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" id="delete" class="btn btn-success"><i class="fa fa-check"></i> Xóa</button>
+                    <button type="button" data-dismiss="modal" id ="hidemodal"class="btn btn-warning"><i class="fa fa-check"></i> Hủy</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>                          
+    <!-- /.modal -->
+</div>
+

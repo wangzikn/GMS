@@ -1,0 +1,93 @@
+/*
+Author: Nguyễn Long Kim Phụng;
+Date:15/1/2019;
+*/
+.btn.btn-success {
+	padding-left: 15px;
+	padding-right: 15px;
+	
+}
+.red {
+	color: red;
+}
+.fa, .mdi{
+	margin-right: 3px;
+}
+.btn.btn-warning {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: 20px;
+}
+.form-control-feedback{
+	margin-top: 5px;
+	display: block;
+}
+.text-themecolor{
+	color: #03a9ff;
+}
+.thongtin{
+	color: #03a9ff;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 2px;
+}
+.tenthongtin{
+	/*color: #990000;*/
+}
+.container-fluid{
+	padding: 0px;
+}
+.error{
+	color: red;
+	font-size:10px;
+}
+.page-titles{
+	    margin: 0px;
+}
+#registration .form-group{
+	margin-bottom: 0 
+}
+
+#registration .input-group{
+	margin-bottom: 3px !important
+}
+
+.error-placement{
+	height: 20px;
+}
+#registration{
+	margin: 8px;
+}
+#registration .card {
+	margin-bottom: 0px;
+}
+.thongtin:first-child{
+	margin-top: 0px;
+}
+.adduser {
+    margin-top: 20px;
+}
+.btnArea{
+    margin-left:20px;
+}
+#department {
+    position: relative;
+    height: -webkit-fill-available;
+    height: -moz-fill-available;
+}
+
+/*mobile section
+@media (max-width: 767.98px) {
+    .thongtin{
+		margin-top: 25px;
+	}
+    .chucnang {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border-bottom: 2px solid #ccc;
+        border-top: 2px solid #ccc;
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+
+}

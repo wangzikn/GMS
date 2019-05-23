@@ -1,0 +1,146 @@
+.content-container {
+    border-collapse: collapse;
+}
+
+.tableInfo {
+    border-color: #B0A8B9;
+    border-radius: 5px;
+    background-color: white;
+    margin: 8px;
+    position: relative;
+    height: -webkit-fill-available;
+    height: -moz-fill-available;
+    height: -ms-fill-available;
+    height: -o-fill-available;
+}
+
+.input-container {
+    padding-bottom: 10px;
+    background-color: white;
+    border-radius: 5px;
+    border-color: #B0A8B9;
+}
+
+.custom-checkbox {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    padding-right:  30px;
+}
+
+.input-group {
+    padding-top: 10px;
+    width: 100%;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.input-group-text {
+    height: 38px;
+}
+
+.button-group {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.btn-group {
+    float: left;
+    padding-top: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.search-container {
+    float: right;
+    display: inline-block;
+}
+
+.btn-group .btn {
+    /*margin: 5px;*/
+}
+
+.dataTables_paginate {
+    float: right;
+}
+
+.tableQuanLiNguoiDung th > i {
+    position: absolute;
+    top: calc(50% - 8);
+    right: 10px;
+}
+
+.tableQuanLiNguoiDung th {
+    font-weight: bold !important;
+}
+
+.tableQuanLiNguoiDung tr td:nth-child(2) {
+    text-align: center;
+}
+
+.tableQuanLiNguoiDung a.edit {
+    color: #03a9f3;
+}
+
+.control-label {
+    float: left;
+}
+
+.page-titles {
+    margin: 0px;
+}
+
+/*Giau Custom*/
+
+.container-fluid {
+    padding: 0px;
+}
+
+#quanli-phanquyen, #quanli-cayxanh {
+    margin: 8px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.group-chonquyen, .group-chonuser {
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.group-chonquyen {
+    margin-bottom: 10px;
+}
+.dropify-wrapper{
+    margin-top:30px;
+}
+.thongtin {
+    color: #03a9ff;
+    font-weight:bold;
+    margin-top:20px;
+}
+.tenthongtin {
+    text-align: left;
+    /*color: #990000;*/
+}
+.btn.btn-warning {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 20px;
+}
+
+table tbody td img {
+    max-width: 200px;
+    max-height: 200px;
+}
+@media screen and (max-width: 576px) {
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+    label {
+        width:100%;
+    }
+}
